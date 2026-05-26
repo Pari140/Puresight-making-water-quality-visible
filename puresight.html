@@ -1,0 +1,493 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PureSight â€” Making Water Quality Visible</title>
+  <link rel="stylesheet" href="puresight.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+<div class="scroll-bar" id="scrollBar"></div>
+
+<!-- â•â•â•â•â•â•â•â•â•â• HERO â•â•â•â•â•â•â•â•â•â• -->
+<section class="hero" id="hero">
+  <canvas id="heroCanvas" class="hero-canvas"></canvas>
+
+  <nav class="nav">
+    <div class="nav-logo">
+      <span class="brand-mark">
+    <img src="logo.jpeg" alt="PureSight logo">
+  </span>
+      <span class="nav-word">PureSight</span>
+    </div>
+    <span class="nav-tag">Making Water Quality Visible</span>
+  </nav>
+
+  <div class="hero-stage">
+
+    <!-- headline block -->
+    <div class="hero-text">
+      <div class="hero-pill" id="hPill">
+        <span class="pill-dot"></span>IoT Water Safety Monitor
+      </div>
+      <h1 class="hero-h1">
+        <span class="hl" id="hl0">You trust</span>
+        <span class="hl accent" id="hl1">every sip.</span>
+        <span class="hl" id="hl2">Should you?</span>
+      </h1>
+      <p class="hero-p" id="hP">
+        Millions drink from public water coolers every day with no way to know if the water is actually safe.
+        PureSight puts the answer on the screen â€” right where you're standing.
+      </p>
+
+      <div class="hero-stats" id="hStats">
+        <div class="hs-item">
+          <div class="hs-top"><span class="hs-num" data-to="500">0</span><span class="hs-sup">M+</span></div>
+          <span class="hs-desc">drink from unverified coolers daily</span>
+        </div>
+        <div class="hs-sep"></div>
+        <div class="hs-item">
+          <div class="hs-top"><span class="hs-num" data-to="0">0</span><span class="hs-sup"></span></div>
+          <span class="hs-desc">visible checks before drinking</span>
+        </div>
+        <div class="hs-sep"></div>
+        <div class="hs-item">
+          <div class="hs-top"><span class="hs-num" data-to="1">0</span><span class="hs-sup">s</span></div>
+          <span class="hs-desc">to know with PureSight</span>
+        </div>
+      </div>
+
+      <a class="hero-cta" href="#device" id="hCta">
+        See it in action
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+      </a>
+    </div>
+
+    <!-- hero visual â€” device with bubble field -->
+    <div class="hero-visual" id="hVisual">
+
+      <!-- floating bubbles around the device -->
+      <div class="hv-bubbles">
+        <div class="hv-bubble b1"></div>
+        <div class="hv-bubble b2"></div>
+        <div class="hv-bubble b3"></div>
+        <div class="hv-bubble b4"></div>
+        <div class="hv-bubble b5"></div>
+        <div class="hv-bubble b6"></div>
+        <div class="hv-bubble b7"></div>
+        <div class="hv-bubble b8"></div>
+        <div class="hv-bubble b9"></div>
+        <div class="hv-bubble b10"></div>
+      </div>
+
+      <div class="hv-glow"></div>
+
+      <div class="hv-device">
+        <div class="hv-screen">
+          <div class="hv-top">
+            <svg width="14" height="17" viewBox="0 0 100 120" fill="none">
+              <path d="M50 6C50 6 10 46 10 72C10 96 28 112 50 112C72 112 90 96 90 72C90 46 50 6 50 6Z" stroke="#5EC4B8" stroke-width="7" fill="none"/>
+              <circle cx="47" cy="74" r="11" fill="#5EC4B8"/>
+              <path d="M56 52C65 43 75 43 84 52" stroke="#5EC4B8" stroke-width="6" stroke-linecap="round" fill="none"/>
+            </svg>
+            <span class="hv-brand">PureSight</span>
+            <span class="hv-dot"></span>
+          </div>
+          <div class="hv-score-wrap">
+            <svg class="hv-arc" viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="8"/>
+              <circle cx="60" cy="60" r="50" fill="none" stroke="#5EC4B8" stroke-width="8"
+                stroke-dasharray="235" stroke-dashoffset="56" stroke-linecap="round"
+                transform="rotate(-225 60 60)" class="hv-arc-fill"/>
+            </svg>
+            <div class="hv-score-center">
+              <span class="hv-num">94</span>
+              <span class="hv-lbl">TRUST</span>
+            </div>
+          </div>
+          <div class="hv-status"><span class="hv-pulse"></span>Safe to Drink</div>
+          <div class="hv-mini-grid">
+            <div class="hv-mini"><span class="hv-mk">TDS</span><span class="hv-mv">142<em>ppm</em></span></div>
+            <div class="hv-mini"><span class="hv-mk">UV</span><span class="hv-mv good">ON</span></div>
+            <div class="hv-mini"><span class="hv-mk">Turbidity</span><span class="hv-mv">0.3<em>NTU</em></span></div>
+            <div class="hv-mini"><span class="hv-mk">Filter</span><span class="hv-mv warn">38%</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hv-ring hv-r1"></div>
+      <div class="hv-ring hv-r2"></div>
+      <div class="hv-ring hv-r3"></div>
+    </div>
+
+  </div>
+
+  <div class="hero-scroll">scroll to explore â†“</div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â• DEVICE DEMO â•â•â•â•â•â•â•â•â•â• -->
+<section class="dev-sec" id="device">
+  <div class="dev-bg">
+    <div class="dev-blob db1"></div>
+    <div class="dev-blob db2"></div>
+    <div class="dev-blob db3"></div>
+    <canvas class="dev-grid-canvas" id="devGridCanvas"></canvas>
+  </div>
+
+  <div class="dev-inner">
+    <div class="dev-eyebrow reveal">Live Device Screen</div>
+    <div class="dev-wrap">
+
+      <!-- LEFT â€” device (moved here for visual split) -->
+      <div class="dev-right reveal">
+        <div class="device-glow" id="deviceGlow"></div>
+        <div class="device-frame">
+          <div class="device-notch"></div>
+          <div class="screen" id="screen">
+            <div class="scanline"></div>
+            <div class="screen-vignette"></div>
+
+            <div class="sc-topbar">
+              <div class="sc-brand">
+                <svg width="11" height="13" viewBox="0 0 100 120" fill="none">
+                  <path d="M50 6C50 6 10 46 10 72C10 96 28 112 50 112C72 112 90 96 90 72C90 46 50 6 50 6Z" stroke="#5EC4B8" stroke-width="8" fill="none"/>
+                  <circle cx="47" cy="74" r="10" fill="#5EC4B8"/>
+                </svg>
+                <span class="sc-name">PureSight</span>
+                <span class="sc-alive" id="scAlive"></span>
+              </div>
+              <span class="sc-clock" id="scClock">--:--:--</span>
+            </div>
+
+            <div class="score-hero">
+              <div class="gauge-outer">
+                <canvas id="gaugeCanvas" width="136" height="136"></canvas>
+                <div class="gauge-inner">
+                  <span class="g-num" id="gNum">94</span>
+                  <span class="g-sub">TRUST</span>
+                </div>
+              </div>
+
+              <div class="score-info">
+                <div class="trust-badge" id="trustBadge">
+                  <span class="tb-dot" id="tbDot"></span>
+                  <span class="tb-lbl" id="tbLbl">Safe to Drink</span>
+                </div>
+                <div class="score-meta-row">
+                  <span class="score-meta-lbl">Verified</span>
+                  <span class="trust-timer" id="trustTimer">00:00:00</span>
+                  <span class="score-meta-lbl">ago</span>
+                </div>
+                
+                <div class="score-loc">Block A Â· Floor 2 Â· AquaGuard Pro</div>
+
+                <div class="wq-drop">
+                  <div class="wq-drop-icon">
+                    <svg viewBox="0 0 36 48" fill="none" width="28" height="36">
+                      <path id="dropPath" d="M18 3C18 3 2 20 2 32C2 41 9 46 18 46C27 46 34 41 34 32C34 20 18 3 18 3Z"/>
+                      <text x="18" y="36" text-anchor="middle" id="dropLabel" style="font-family:monospace;font-size:6px;fill:rgba(255,255,255,0.9);font-weight:500">Pure</text>
+                    </svg>
+                  </div>
+                  <div class="wq-info">
+                    <span class="wq-title">Water Quality</span>
+                    <span class="wq-val" id="dropCaption">Excellent</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="sc-rule"></div>
+
+            <div class="metric-grid">
+              <div class="mgc" id="mgTDS">
+                <div class="mgc-top">
+                  <div class="mgc-icon-wrap" id="iconTDS">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2v20M2 12h20"/></svg>
+                  </div>
+                  <span class="mgc-name">TDS</span>
+                  <span class="mgc-dot" id="dotTDS"></span>
+                </div>
+                <div class="mgc-body">
+                  <span class="mgc-val" id="valTDS">142</span>
+                  <span class="mgc-unit">ppm</span>
+                </div>
+                <div class="mgc-track"><div class="mgc-fill" id="fillTDS"></div></div>
+                <div class="mgc-foot">
+                  <span class="mgc-note" id="noteTDS">Excellent</span>
+                  <span class="mgc-safe">&lt;300</span>
+                </div>
+              </div>
+
+              <div class="mgc" id="mgTurb">
+                <div class="mgc-top">
+                  <div class="mgc-icon-wrap" id="iconTurb">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="8"/></svg>
+                  </div>
+                  <span class="mgc-name">Turbidity</span>
+                  <span class="mgc-dot" id="dotTurb"></span>
+                </div>
+                <div class="mgc-body">
+                  <span class="mgc-val" id="valTurb">0.3</span>
+                  <span class="mgc-unit">NTU</span>
+                </div>
+                <div class="mgc-track"><div class="mgc-fill" id="fillTurb"></div></div>
+                <div class="mgc-foot">
+                  <span class="mgc-note" id="noteTurb">Crystal clear</span>
+                  <span class="mgc-safe">&lt;1</span>
+                </div>
+              </div>
+
+              <div class="mgc" id="mgTemp">
+                <div class="mgc-top">
+                  <div class="mgc-icon-wrap" id="iconTemp">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+                  </div>
+                  <span class="mgc-name">Temp</span>
+                  <span class="mgc-dot" id="dotTemp"></span>
+                </div>
+                <div class="mgc-body">
+                  <span class="mgc-val" id="valTemp">24</span>
+                  <span class="mgc-unit">Â°C</span>
+                </div>
+                <div class="mgc-track"><div class="mgc-fill" id="fillTemp"></div></div>
+                <div class="mgc-foot">
+                  <span class="mgc-note" id="noteTemp">Optimal</span>
+                  <span class="mgc-safe">&lt;30Â°</span>
+                </div>
+              </div>
+
+              <div class="mgc" id="mgFilter">
+                <div class="mgc-top">
+                  <div class="mgc-icon-wrap" id="iconFilter">
+                    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                  </div>
+                  <span class="mgc-name">Filter</span>
+                  <span class="mgc-dot" id="dotFilter"></span>
+                </div>
+                <div class="mgc-body">
+                  <span class="mgc-val" id="valFilter">38</span>
+                  <span class="mgc-unit">%</span>
+                </div>
+                <div class="mgc-track"><div class="mgc-fill" id="fillFilter"></div></div>
+                <div class="mgc-foot">
+                  <span class="mgc-note" id="noteFilter">Replace soon</span>
+                  <span class="mgc-safe">&gt;20%</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="status-list">
+              <div class="sl-item" id="slUV">
+                <div class="sl-icon" id="slUVIcon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                </div>
+                <div class="sl-info">
+                  <span class="sl-name">UV Lamp</span>
+                  <span class="sl-sub" id="uvSub">Operational Â· 2,847 hrs</span>
+                </div>
+                <span class="sl-pill" id="uvPill">Active</span>
+              </div>
+
+              <div class="sl-item" id="slFraud">
+                <div class="sl-icon" id="slFraudIcon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+                </div>
+                <div class="sl-info">
+                  <span class="sl-name">Filter Auth</span>
+                  <span class="sl-sub" id="fraudSub">Verified genuine Â· 12 May</span>
+                </div>
+                <span class="sl-pill" id="fraudPill">Genuine</span>
+              </div>
+            </div>
+
+            <div class="sc-bottom">
+              <span class="sc-bl">Serviced: <strong>12 May 2025</strong></span>
+              <span class="sc-br" id="scLiters">74,320 L filtered</span>
+            </div>
+
+            <div class="fraud-flash" id="fraudFlash"></div>
+          </div>
+          <div class="device-chin"><div class="chin-bar"></div></div>
+        </div>
+      </div>
+
+      <!-- RIGHT â€” controls -->
+      <div class="dev-left">
+        <h2 class="dev-h2 reveal">
+          Walk up.<br>Look.<br><em>Know.</em>
+        </h2>
+
+        <p class="dev-p reveal">
+          PureSight attaches to any existing water purifier and shows live water safety data directly on the screen.
+        </p>
+
+        <div class="feat-pills reveal">
+          <div class="fp"><span class="fp-ico">â—ˆ</span>Filter health &amp; remaining life</div>
+          <div class="fp"><span class="fp-ico">â—ˆ</span>UV lamp operational status</div>
+          <div class="fp"><span class="fp-ico">â—ˆ</span>TDS, turbidity &amp; temperature</div>
+          <div class="fp"><span class="fp-ico">â—ˆ</span>Filter fraud detection</div>
+        </div>
+
+        <div class="ctrl reveal">
+          <p class="ctrl-lbl">Simulate a scenario</p>
+          <div class="sc-btns">
+            <button class="sc active" data-s="safe"><span class="sc-dot sd-safe"></span>All Clear</button>
+            <button class="sc" data-s="warn"><span class="sc-dot sd-warn"></span>Filter Warning</button>
+            <button class="sc" data-s="crit"><span class="sc-dot sd-crit"></span>Critical Alert</button>
+          </div>
+        </div>
+
+        <div class="live-strips reveal" id="liveStrips">
+          <div class="ls-strip">
+            <span class="ls-label">Current Trust Score</span>
+            <span class="ls-value teal" id="stripScore">94/100</span>
+          </div>
+          <div class="ls-strip">
+            <span class="ls-label">Status</span>
+            <span class="ls-value teal" id="stripStatus">Safe to Drink</span>
+          </div>
+          <div class="ls-strip">
+            <span class="ls-label">Uptime today</span>
+            <span class="ls-value" id="stripTime">00:00:00</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- â•â•â•â•â•â•â•â•â•â• FUTURE AQUA CONCEPT â•â•â•â•â•â•â•â•â•â• -->
+<section class="future-concept-sec" id="future">
+  <div class="future-concept-inner">
+    <div class="concept-copy reveal">
+      <p class="concept-eyebrow">Future concept</p>
+      <h2 class="concept-h2">
+        When every purifier becomes <em>visible.</em>
+      </h2>
+      <p class="concept-p">
+        Future Aqua imagines PureSight built directly into modern water systems, where safety is not hidden inside pipes or filters.
+      </p>
+      <p class="concept-p">
+        The display turns water quality into something anyone can understand in one glance: trust score, filter life, UV status and live purity data.
+      </p>
+      <p class="concept-p">
+        It shows the direction PureSight can grow toward: public coolers, offices, homes and shared spaces where clean water should never be a guess.
+      </p>
+
+      <div class="concept-points">
+        <span>Real-time safety screen</span>
+        <span>Filter fraud awareness</span>
+        <span>No app dependency</span>
+      </div>
+    </div>
+
+    <div class="concept-visual reveal">
+      <img src="future_aqua.png" alt="Future Aqua purifier concept with PureSight display" class="concept-img"/>
+      <div class="concept-caption">
+        <span>PureSight inside a next-generation purifier system</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â• HOW IT WORKS â•â•â•â•â•â•â•â•â•â• -->
+<section class="how-sec" id="how">
+  <div class="how-inner">
+    <p class="eyebrow reveal">How it works</p>
+    <h2 class="sec-h2 reveal">One device. Full visibility.</h2>
+    <div class="steps">
+      <div class="step reveal">
+        <span class="step-n">01</span>
+        <div class="step-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+        </div>
+        <h3>Attaches to any purifier</h3>
+        <p>Clips onto Aquaguard, Kent, Livpure â€” any brand. No replacement, no plumbing changes.</p>
+      </div>
+      <div class="step-arr reveal">â†’</div>
+      <div class="step reveal">
+        <span class="step-n">02</span>
+        <div class="step-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3>Monitors in real time</h3>
+        <p>TDS, turbidity, temperature, UV health, filter life, filter authenticity â€” all live.</p>
+      </div>
+      <div class="step-arr reveal">â†’</div>
+      <div class="step reveal">
+        <span class="step-n">03</span>
+        <div class="step-ico">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <h3>Displays live on screen</h3>
+        <p>Walk up, read the screen, know instantly. The answer is always visible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â• THINKING â•â•â•â•â•â•â•â•â•â• -->
+<section class="think-sec" id="thinking">
+  <div class="think-inner">
+    <p class="eyebrow light reveal">Design decisions</p>
+    <h2 class="sec-h2 light reveal">Why it looks and works this way</h2>
+    <div class="think-grid">
+      <div class="tc reveal"><span class="tc-n">01</span><h3>No app, no friction</h3><p>If someone has to take out their phone, you've already lost them. The screen answers before they think to ask.</p></div>
+      <div class="tc reveal"><span class="tc-n">02</span><h3>One score, not five numbers</h3><p>TDS and NTU mean nothing to most people. The Trust Score collapses everything into one answer. The detail is still there â€” just not in the way.</p></div>
+      <div class="tc reveal"><span class="tc-n">03</span><h3>Alerts that feel urgent</h3><p>A red number isn't enough. When a fake filter is detected, the screen reacts â€” dramatically. Designed to be impossible to miss.</p></div>
+      <div class="tc reveal"><span class="tc-n">04</span><h3>Trust made public</h3><p>PureSight turns a private maintenance problem into a visible public signal. Anyone can look at the screen and know whether the purifier deserves trust.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- â•â•â•â•â•â•â•â•â•â• USE CASES â•â•â•â•â•â•â•â•â•â• -->
+<section class="places-sec" id="places">
+  <div class="places-inner">
+    <p class="eyebrow light reveal">Where it matters</p>
+    <h2 class="sec-h2 light reveal">PureSight belongs wherever water is shared.</h2>
+
+    <div class="places-grid">
+      <div class="place-card reveal">
+        <span class="place-n">01</span>
+        <h3>Office coolers</h3>
+        <p>Employees should not have to trust maintenance blindly. PureSight makes every refill point visibly accountable.</p>
+      </div>
+
+      <div class="place-card reveal">
+        <span class="place-n">02</span>
+        <h3>Schools and colleges</h3>
+        <p>When hundreds drink from the same purifier, the screen becomes a simple public signal: safe, caution, or do not drink.</p>
+      </div>
+
+      <div class="place-card reveal">
+        <span class="place-n">03</span>
+        <h3>Hospitals and clinics</h3>
+        <p>In sensitive spaces, water safety needs more than assumption. Live filter, UV and quality status reduces invisible risk.</p>
+      </div>
+    </div>
+
+    <div class="places-line reveal">
+      <span>No app.</span>
+      <span>No guessing.</span>
+      <span>Just visible trust.</span>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <span class="footer-mark">
+    <img src="logo.jpeg" alt="PureSight logo">
+  </span>
+  <span class="footer-brand">PureSight</span>
+  <p class="footer-tag">Making Water Quality Visible</p>
+  <p class="footer-co">A Shreshthtam product</p>
+</footer>
+
+<script src="puresight.js"></script>
+</body>
+</html>
